@@ -1,13 +1,14 @@
 "use client";
-import { useState } from "react";
 import { quizCategories } from "@/app/category/page";
+interface CategorySelectorProps {
+  onSelect: (id: number) => void;
+  selectedCategory: number | null;
+}
+
 export default function CategorySelector({
   onSelect,
-}: {
-  onSelect: (id: number) => void;
-}) {
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
-
+  selectedCategory,
+}: CategorySelectorProps) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-center">Choose a Category</h2>
@@ -15,10 +16,7 @@ export default function CategorySelector({
         {quizCategories.map((category) => (
           <button
             key={category.id}
-            onClick={() => {
-              setSelectedCategory(category.id);
-              onSelect(category.id);
-            }}
+            onClick={() => onSelect(category.id)}
             className={`p-4 rounded-lg border-2 transition-all ${
               selectedCategory === category.id
                 ? "border-indigo-500 scale-105"
