@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { quizCategories } from "@/app/category/page";
-import { Question, QuizQuestion } from "./types/page";
-import Quiz from "./components/Quiz/page";
+import { quizCategories } from "@/app/category/categories";
+import { Question, QuizQuestion } from "./types/types";
+import Quiz from "./components/Quiz/quiz";
 function transformQuestions(apiQuestions: Question[]): QuizQuestion[] {
   return apiQuestions.map(
     (q: Question): QuizQuestion => ({

@@ -1,5 +1,5 @@
 "use client";
-import { quizCategories } from "@/app/category/page";
+import { quizCategories } from "@/app/category/categories";
 interface CategorySelectorProps {
   onSelect: (id: number) => void;
   selectedCategory: number | null;

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { QuizQuestion } from "@/app/types/page";
+import { QuizQuestion } from "@/app/types/types";
 export default function Quiz({
   questions,
   onComplete,
